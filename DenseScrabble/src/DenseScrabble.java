@@ -24,7 +24,7 @@ public class DenseScrabble extends TextFileAccessor {
 			char[] working = words[i].toLowerCase().toCharArray();
 			int wordScore = 0;
 			for (int j = 0; j < working.length; j++) {
-				if (Character.isLetter(working[j])) {
+				if (Character.isLetter(working[j]) && working[j]-ASCII_CODE_a <= SCRABBLE_SCORES.length) {
 					wordScore += SCRABBLE_SCORES[working[j] - ASCII_CODE_a];
 				}
 			}
